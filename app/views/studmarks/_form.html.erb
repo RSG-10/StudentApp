@@ -1,0 +1,45 @@
+<section id="callback" class="hoc clear"> 
+  <div>
+    <h6 class="heading">Student Mark</h6>
+   
+<%= form_with(model: studmark) do |form| %>
+
+  <div class="field">
+    <%= form.text_field :firstname , placeholder: "First Name"%>
+  <span style="color:red"><%= studmark.errors.full_messages_for(:firstname).first if studmark.errors.any? %></span>
+
+  </div>
+
+  <div class="field">
+    <%= form.text_field :lastname , placeholder: "Last Name"%>
+  <span style="color:red"><%= studmark.errors.full_messages_for(:lastname).first if studmark.errors.any? %></span>
+
+  </div>
+
+  <div class="field">
+    <%= form.number_field :mark1 , placeholder: "Mark1"%>
+  <span style="color:red"><%= studmark.errors.full_messages_for(:mark1).first if studmark.errors.any? %></span>
+
+  </div>
+
+  <div class="field">
+    <%= form.number_field :mark2 , placeholder: "Mark2"%>
+  <span style="color:red"><%= studmark.errors.full_messages_for(:mark2).first if studmark.errors.any? %></span>
+
+  </div>
+
+  <div class="field">
+    <%= form.number_field :mark3 , placeholder: "Mark3"%>
+  <span style="color:red"><%= studmark.errors.full_messages_for(:mark3).first if studmark.errors.any? %></span>
+
+  </div>
+
+
+
+  <div class="actions">
+    <%= form.submit 'Save', class:"submitbtn"%>
+  </div>
+<% end %>
+</div>
+</section>
+</div>

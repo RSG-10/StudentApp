@@ -1,0 +1,40 @@
+<section id="callback" class="hoc clear"> 
+  <div>
+    <h6 class="heading">Student Profile Details</h6>
+<p id="notice"><%= notice %></p>
+
+
+<table>
+  <thead>
+    <tr>
+      <th>Age</th>
+      <th>Email</th>
+      <th>Address</th>
+      <th>Mobilenumber</th>
+      <th>Studmark</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @studprofiles.each do |studprofile| %>
+      <tr>
+        <td><%= studprofile.age %></td>
+        <td><%= studprofile.email %></td>
+        <td><%= studprofile.address %></td>
+        <td><%= studprofile.mobilenumber %></td>
+        <td><%= studprofile.studmark.firstname  %></td>
+        <td><%= link_to 'Show', studprofile ,:class=>"linkbtn" %></td>
+        <td><%= link_to 'Edit', edit_studprofile_path(studprofile) ,:class=>"linkbtn" %></td>
+        <td><%= button_to 'Destroy', studprofile, method: :delete,:class=>"borderclass", data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Studprofile', new_studprofile_path %>
+</div>
+</section>
+</div>

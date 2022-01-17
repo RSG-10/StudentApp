@@ -1,0 +1,42 @@
+<section id="callback" class="hoc clear"> 
+  <div>
+    <h6 class="heading">Student Profile</h6>
+<p id="notice"><%= notice %></p>
+
+<%= form_with(model: studprofile) do |form| %>
+ 
+
+  <div class="field">
+  <%= form.number_field :age , placeholder: "Age"%>
+  <span style="color:red"><%= studprofile.errors.full_messages_for(:age).first if studprofile.errors.any? %></span>
+</div>
+
+<div class="field">
+  <%= form.text_field :email , placeholder: "Email" %>
+  <span style="color:red"><%= studprofile.errors.full_messages_for(:email).first if studprofile.errors.any? %></span>
+</div>
+
+<div class="field">
+  <%= form.text_field :address , placeholder: "Address" %>
+  <span style="color:red"><%= studprofile.errors.full_messages_for(:address).first if studprofile.errors.any? %></span>
+</div>
+
+<div class="field">
+  <%= form.number_field :mobilenumber , placeholder: "Mobile Number"%>
+  <span style="color:red"><%= studprofile.errors.full_messages_for(:mobilenumber).first if studprofile.errors.any? %></span>
+</div>
+<div class="field">
+  <%= form.file_field :image , placeholder: "Enter Image"%>
+  <span style="color:red"><%= studprofile.errors.full_messages_for(:image).first if studprofile.errors.any? %></span>
+</div>
+<div class="field">
+    <%= form.select :studmark_id, Studmark.all.collect { |p| [ p.firstname, p.id ] }, {prompt: 'Select Student'} %>
+</div>
+<div class="actions">
+    <%= form.submit 'Save', class:"submitbtn" %>
+</div>
+ 
+<% end %>
+</div>
+</section>
+</div>

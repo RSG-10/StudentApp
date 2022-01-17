@@ -1,0 +1,39 @@
+<section id="callback" class="hoc clear"> 
+  <div>
+    <h6 class="heading">Student Profile</h6>
+<p id="notice"><%= notice %></p>
+<p>
+  <%= image_tag @studprofile.image %>
+</p>
+<p>
+  <strong>Age:</strong>
+  <%= @studprofile.age %>
+</p>
+<p>
+  <strong>FirstName:</strong>
+  <%= @studprofile.studmark.firstname %>
+</p>
+<p>
+  <strong>Email:</strong>
+  <%= @studprofile.email %>
+</p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @studprofile.address %>
+</p>
+
+<p>
+  <strong>Mobilenumber:</strong>
+  <%= @studprofile.mobilenumber %>
+</p>
+<p>
+  <strong>Studmark:</strong>
+  <%= @studprofile.studmark_id %>
+</p>
+
+<%= link_to 'Edit', edit_studprofile_path(@studprofile) %> |
+<%= link_to 'Back', studprofiles_path %>
+</div>
+</section>
+</div>

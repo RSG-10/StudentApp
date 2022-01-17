@@ -1,0 +1,12 @@
+<div class="bgded overlay" style="background-image:url('images/bg.jpg');"> 
+  <div class="wrapper row1">
+    <nav id="mainav" class="hoc clear"> 
+      <ul class="clear">
+        <li><a href="/studmarks">Student Marks</a></li>
+        <li><a href="/studprofiles">Student Profile</a></li>
+        <% if session[:admin] %>
+        <li><a href="/admin/logout">ADMIN LOGOUT</a></li>
+        <% end %>
+      </ul>
+    </nav>
+  </div>

@@ -1,0 +1,40 @@
+<section id="callback" class="hoc clear"> 
+  <div>
+    <h6 class="heading">Student Mark</h6>
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Firstname:</strong>
+  <%= @studmark.firstname %>
+</p>
+
+<p>
+  <strong>Lastname:</strong>
+  <%= @studmark.lastname %>
+</p>
+
+<p>
+  <strong>Mark1:</strong>
+  <%= @studmark.mark1 %>
+</p>
+
+<p>
+  <strong>Mark2:</strong>
+  <%= @studmark.mark2 %>
+</p>
+
+<p>
+  <strong>Mark3:</strong>
+  <%= @studmark.mark3 %>
+</p>
+
+<p>
+  <strong>Total:</strong>
+  <%= @studmark.total %>
+</p>
+
+<%= link_to 'Edit', edit_studmark_path(@studmark) %> |
+<%= link_to 'Back', studmarks_path %>
+</div>
+</section>
+</div>

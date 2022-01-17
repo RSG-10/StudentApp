@@ -1,0 +1,53 @@
+<section id="callback" class="hoc clear"> 
+  <div>
+    <h6 class="heading">Student Profile</h6>
+<%= form_with(model: studentprofile) do |form| %>
+ 
+
+  <div class="field">
+    <%= form.number_field :age , placeholder: "Age"%>
+    <span style="color:red"><%= studentprofile.errors.full_messages_for(:age).first if studentprofile.errors.any? %></span>
+  </div>
+
+  <div class="field">
+    <%= form.text_field :email , placeholder: "Email" %>
+    <span style="color:red"><%= studentprofile.errors.full_messages_for(:email).first if studentprofile.errors.any? %></span>
+  </div>
+
+  <div class="field">
+    <%= form.text_field :address , placeholder: "Address" %>
+    <span style="color:red"><%= studentprofile.errors.full_messages_for(:address).first if studentprofile.errors.any? %></span>
+  </div>
+
+  <div class="field">
+    <%= form.number_field :mobilenumber , placeholder: "Mobile Number"%>
+    <span style="color:red"><%= studentprofile.errors.full_messages_for(:mobilenumber).first if studentprofile.errors.any? %></span>
+  </div>
+  <div class="field">
+  <%= form.file_field :image1 , placeholder: "Enter Image"%>
+  <span style="color:red"><%= studentprofile.errors.full_messages_for(:image).first if studentprofile.errors.any? %></span>
+  </div>
+  <div class="field">
+    <%= form.select :studentmarks_id, Studentmark.all.collect { |p| [ p.firstname, p.id ] }, {prompt: 'Select Student'} %>
+  </div>
+  <div class="actions">
+    <%= form.submit 'Save', class:"submitbtn" %>
+  </div>
+<% end %>
+
+</div>
+</section>
+</div>
+
+
+
+
+belongs_to :studentmark
+has_one_attached :image1
+validates :age, presence: true ,numericality: true
+validates :email, presence: true ,uniqueness: true, format: { with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i, on: :create }
+validates :address, presence: true
+# validates :image1, presence: true
+validates :mobilenumber,:presence => true,
+:numericality => true,
+:length => { :minimum => 10, :maximum => 10 }
